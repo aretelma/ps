@@ -4,10 +4,12 @@ for i in range(n):
     w.append(int(input()))
 
 m = []
-m.append(w[0])
-m.append(w[0] + w[1])
 
-m.append(max(m[0]+w[2], w[1]+w[2], m[1]))
+m.append(w[0])
+if(n > 1):
+    m.append(w[0] + w[1])
+if(n > 2):
+    m.append(max(m[0]+w[2], w[1]+w[2], m[1]))
 
 for i in range(3, n):
     m.append(max(m[i-2]+w[i], m[i-3]+w[i-1]+w[i], m[i-1]))
